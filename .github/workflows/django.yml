@@ -10,10 +10,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        -postgres_versions: ["14.9","15"]
 
     services:
       postgres:
-        image: postgres:14.9
+        image: postgres:${matrix.postgres_versions}
         env:
           POSTGRES_USER: decide
           POSTGRES_PASSWORD: decide
