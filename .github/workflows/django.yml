@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        -postgres_versions: ["14.9","15"]
+        postgres-version: ["14.9", "15"]
 
     services:
       postgres:
